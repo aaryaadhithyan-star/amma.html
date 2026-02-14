@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fff3f9;
+            color: #e34b77;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid #e34b77;
+            background-color: #fff;
+            color: #e34b77;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #e34b77;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+        .flower-gallery img {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WILL YOU BE MY VALENTINE?</h1>
+    <img src="C:\Users\HP\Downloads\catcuddling.jpg" alt="Cats cuddling"> <!-- Replace with your image link -->
+    
+    <div>
+        <button onclick="showResponse('yes')">YES</button>
+        <button onclick="showResponse('no')">NO</button>
+    </div>
+    
+    <div id="flowers" class="hidden">
+        <h2>YAYYYYYY!!!</h2>
+        <p>I GOT YOU SOME FLOWERS! THANK YOU FOR MAKING ME THE HAPPIEST PERSON IN THE WORLD :)</p>
+        <div class="flower-gallery">
+            <img src="C:\Users\HP\Downloads\flowers.jpg" alt="Flower 1">
+        </div>
+        <button onclick="goBack()">BACK</button>
+    </div>
+    
+    <div id="sad-cat" class="hidden">
+        <h2>NOT ALLOWED.</h2>
+        <p>WHY WOULD YOU EVEN CLICK THIS BUTTON.</p>
+        <img src="C:\Users\HP\Downloads\Sad cat.jpg" alt="Sad Cat"> <!-- Replace with your image link -->
+        <p>TRY AGAIN YOU FOOL</p>
+        <button onclick="goBack()">BACK</button>
+    </div>
+
+    <script>
+        function showResponse(response) {
+            if (response === 'yes') {
+                document.getElementById('flowers').classList.remove('hidden');
+                document.getElementById('sad-cat').classList.add('hidden');
+            } else if (response === 'no') {
+                document.getElementById('sad-cat').classList.remove('hidden');
+                document.getElementById('flowers').classList.add('hidden');
+            }
+        }
+
+        function goBack() {
+            document.getElementById('flowers').classList.add('hidden');
+            document.getElementById('sad-cat').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
+
